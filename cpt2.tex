@@ -3,6 +3,53 @@
 
 \section{SELECTの性質}
 
-\subsection{元のテーブルは変化しない}
+\subsection{フィルタとしてのSELECT}
+
+\subsection{数学の関数をSELECTで書く}
+
+SELECTとはなにかを一言で表すとしたら、それは数学でいう関数です。
+
+たとえば、$y=x~2+1$という関数を考えてみます。この式は2次関数で、2次元直交座標系では、このようにあらわされます。
+SELECｔが関数であれば、これをそのまま表現することができるはずです。
+
+ここで、xaxisというテーブルを考えます。このテーブルは、直交座標系でx軸の上にある数値をとります。その名の通り、xaxisに含まれるレコードは、数値で、属性名がxであるとします。
+
+テーブルxaxisのすべてのレコードは、重複なく、x軸上の数値を表します。つまり、属性xはxaxisのプライマリキーです。このような条件の下、ｘの値に対応したyの値のすべては、以下のSELECT文で求めることができます。
+
+\begin{verbatim}
+SELECT x*x+1 AS y FROM xaxis
+\end{verbatim}
+
+このSELECTの実行結果は、xaxisに含まれるすべてのレコードそれぞれのxの値に対応するyの値の集合になります。
+
+範囲を設定することもできます。x軸上で、[1,10]という区間を競ってしたときのグラフは、以下のようになります。
+この区間のyを求める関数は、SELECTでは以下のように書くことができます。
+
+\begin{verbatim}
+SELECT x*x+1 AS y FROM xaxis　WHERE x>=1 AND x<=10
+\end{verbatim}
+
+このように、SELECTとは関数です。関数はxとyの間の対応（写像関係）を表します。
+
+\subsection{SELECTと副作用}
+
+SELECTは、数学で言う関数と同じものであることを説明しました。では、関数の性質として、どのようなものがあるでしょうか。
+
+$y=f8x)$という関数を考えてみます。xとyの関係を
+
+\subsection{SELECTの結果}
+
+\subsection{集合とテーブルの違い}
+
+SELECTは、数学で言うところの関数です。
 
 \section{SELECTとテーブル}
+
+\subsection{なぜサブクエリという概念があるのか}
+
+\subsection{命題と解空間}
+
+\section{SELECTと第一級関数}
+
+
+\subsection{第一級関数型言語}
